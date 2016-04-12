@@ -28,12 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
 		if (Input.GetKey("space"))
 		{
-			Vector3 tempVector = new Vector3(0, Time.deltaTime * Velocity * 5, 0);
+			Vector3 tempVector = new Vector3(0, Time.deltaTime * Velocity * 20, 0);
 			gameObject.transform.position = gameObject.transform.position + tempVector;
+			//Input.GetAxis("Jump").Equals(gameObject.transform.position);
 		}
 
 		Vector3 speed = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-		speed = transform.rotation * speed;
+	//	speed = transform.rotation * speed;
 
 		CharacterController playerMove = GetComponent<CharacterController>();
 		playerMove.SimpleMove(speed);
